@@ -15,7 +15,7 @@ const withAuth = function(req, res, next) {
       if (err) {
         res.status(401).send('No autorizado: token invalido');
       } else {
-        req.email = decoded.email;
+        req.username = decoded.username;
         next();
       }
     });

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 class Signup extends Component {
 
-    constructor() {
-        super();
+    constructor(context) {
+        super(context);
         this.state = {
             username: '',
             password: ''
@@ -21,11 +21,28 @@ class Signup extends Component {
         });
     }
 
+    onSubmit(e) {
+
+        fetch('/api/authenticate', {
+            method: 'POST',
+            body: JSON.stringify(this.state),
+            headers: { 'Content-Type': 'application/json' }
+        }).then(res => {
+            if (res.status === 200) {
+                alert('conseguido');
+            } 
+        }).catch(err => {
+            console.log(err);
+            alert('error login');
+        })
+        e.preventDefault();
+    }
+
     render() {
         return (
             <div id="modal" className="modal">
                 <div className="modal-content">
-                    <form onSubmit={this.ComprobarUsuario.bind(this)}>
+                    <form onSubmit={this.onSubmit.bind(this)}>
                         <div className="input-field">
                             <i className="material-icons prefix teal-text text-darken-2">person</i>
                             <input type="text" id="username" name="username" value={this.state.username} onChange={this.obtenerCambio.bind(this)}></input>

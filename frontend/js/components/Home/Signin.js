@@ -31,8 +31,8 @@ class Signin extends Component {
             <div id="modal1" className="modal">
                 <div className="modal-content">
                     <form onSubmit={this.RegistarUsuario.bind(this)}>
-                        <div class="row">
-                            <div class="col m6">
+                        <div className="row">
+                            <div className="col m6">
                                 <div className="input-field">
                                     <i className="material-icons prefix blue-text text-accent-3" >contacts</i>
                                     <input id="first_name" type="text" className="validate"></input>
