@@ -3,13 +3,13 @@ import Nav from './Nav';
 class Home extends Component {
     constructor() {
         super();
-        //Set default message
+        
         this.state = {
             message: 'Loading...'
         }
     }
     componentDidMount() {
-        //GET message from server using fetch api
+        //GET mensanje usando fetch api
         fetch('/api/home')
             .then(res => res.text())
             .then(res => this.setState({ message: res }));

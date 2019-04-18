@@ -29,14 +29,14 @@ router.post('/api/authenticate', async (req, res) => {
     if (!user) {
         res.status(401)
             .json({
-                error: 'Incorrect email or password'
+                error: 'El usuario o la contrasenia es incorrectx'
             });
     } else {
         const match = await user.comparePassword(password);
         if (!match) {
             res.status(401)
                 .json({
-                    error: 'Incorrect email or password'
+                    error: 'El usuario o la contrasenia es incorrectx'
                 });
         } else {
             const payload = { username };
