@@ -14,8 +14,21 @@ class Signin extends Component {
         }
     }
 
-    RegistarUsuario(e) {
+    onSubmit(e) {
 
+        fetch('/api/register', {
+            method: 'POST',
+            body: JSON.stringify(this.state),
+            headers: { 'Content-Type': 'application/json' }
+        }).then(res => {
+            if (res.status === 200) {
+                alert('Usuario registrado');
+            } 
+        }).catch(err => {
+            console.log(err);
+            alert('error register');
+        })
+        e.preventDefault();
     }
 
     obtenerCambio(e) {
@@ -30,7 +43,7 @@ class Signin extends Component {
         return (
             <div id="modal1" className="modal">
                 <div className="modal-content">
-                    <form onSubmit={this.RegistarUsuario.bind(this)}>
+                    <form onSubmit={this.onSubmit.bind(this)}>
                         <div className="row">
                             <div className="col m6">
                                 <div className="input-field">

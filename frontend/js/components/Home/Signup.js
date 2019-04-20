@@ -10,10 +10,6 @@ class Signup extends Component {
         }
     }
 
-    ComprobarUsuario(e) {
-
-    }
-
     obtenerCambio(e) {
         const { name, value } = e.target;
         this.setState({
@@ -44,18 +40,18 @@ class Signup extends Component {
                 <div className="modal-content">
                     <form onSubmit={this.onSubmit.bind(this)}>
                         <div className="input-field">
-                            <i className="material-icons prefix teal-text text-darken-2">person</i>
+                            <i className="material-icons prefix  blue-text text-accent-3">account_circle</i>
                             <input type="text" id="username" name="username" value={this.state.username} onChange={this.obtenerCambio.bind(this)}></input>
                             <label htmlFor="username">Username</label>
                         </div>
                         <br></br>
                         <div className="input-field">
-                            <i className="material-icons prefix teal-text text-darken-2">lock</i>
+                            <i className="material-icons prefix  blue-text text-accent-3">lock</i>
                             <input type="text" id="password" name="password" value={this.state.password} onChange={this.obtenerCambio.bind(this)}></input>
                             <label htmlFor="password">Password</label>
                         </div>
                         <br></br>
-                        <input type="submit" value="Login" className="btn btn-large"></input>
+                        <input type="submit" value="Login" className="btn btn-large blue accent-3"></input>
                     </form>
                 </div>
             </div>

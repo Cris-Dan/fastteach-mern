@@ -9,7 +9,6 @@ class Home extends Component {
         }
     }
     componentDidMount() {
-        //GET mensanje usando fetch api
         fetch('/api/home')
             .then(res => res.text())
             .then(res => this.setState({ message: res }));
