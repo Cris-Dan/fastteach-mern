@@ -3,6 +3,8 @@ const router = Router();
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const withAuth = require('../withAuth');
+
+
 router.get('/home', (req, res) => {
     res.send('holiMundo!');
 });
@@ -16,6 +18,7 @@ router.get('/checkToken', withAuth, (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
+
     const { username, password, firstname, lastname, email } = req.body;
     const user = new User({ username, password, firstname, lastname, email });
     const user1 = await User.findOne({ username });
