@@ -15,19 +15,18 @@ class Signin extends Component {
     }
 
     onSubmit(e) {
-
+        console.log(this.state);
         fetch('/api/register', {
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: { 'Content-Type': 'application/json' }
-        }).then(res => {
-            if (res.status === 200) {
-                alert('Usuario registrado');
-            } 
-        }).catch(err => {
-            console.log(err);
-            alert('error register');
         })
+            .then(res => res.text())
+            .then(res => alert(res))
+            .catch(err => {
+                console.log(err);
+                alert('error register');
+            })
         e.preventDefault();
     }
 
@@ -46,37 +45,37 @@ class Signin extends Component {
                     <form onSubmit={this.onSubmit.bind(this)}>
                         <div className="row">
                             <div className="col m6">
-                                <div className="input-field">
-                                    <i className="material-icons prefix blue-text text-accent-3" >contacts</i>
-                                    <input id="first_name" type="text" className="validate"></input>
-                                    <label htmlFor="first_name">First Name</label>
-                                </div>
-                                
-                                <div className="input-field">
-                                    <i className="material-icons prefix blue-text text-accent-3">contacts</i>
-                                    <input id="lastname" name="lastname" onChange={this.obtenerCambio.bind(this)} type="text" className="validate" value={this.state.lastname}></input>
-                                    <label htmlFor="lastname">Last Name</label>
-                                </div>
-                                
 
                                 <div className="input-field">
                                     <i className="material-icons prefix blue-text text-accent-3">account_circle</i>
                                     <input id="usernameSi" name="username" onChange={this.obtenerCambio.bind(this)} type="text" className="validate" value={this.state.username}></input>
-                                    <label htmlFor="usernameSi">Username</label>
+                                    <label htmlFor="usernameSi">Nombre de usario</label>
                                 </div>
-                               
+
                                 <div className="input-field">
                                     <i className="material-icons prefix blue-text text-accent-3">email</i>
                                     <input id="email" name="email" onChange={this.obtenerCambio.bind(this)} type="email" className="validate" value={this.state.email}></input>
-                                    <label htmlFor="email">Email</label>
+                                    <label htmlFor="email">Correo</label>
                                 </div>
 
+                                <div className="input-field">
+                                    <i className="material-icons prefix blue-text text-accent-3">contacts</i>
+                                    <input id="firstname" name="firstname" onChange={this.obtenerCambio.bind(this)} type="text" className="validate" value={this.state.firstname}></input>
+                                    <label htmlFor="firstname">Nombres</label>
+                                </div>
+
+                                <div className="input-field">
+                                    <i className="material-icons prefix blue-text text-accent-3">contacts</i>
+                                    <input id="lastname" name="lastname" onChange={this.obtenerCambio.bind(this)} type="text" className="validate" value={this.state.lastname}></input>
+                                    <label htmlFor="lastname">Apellidos</label>
+                                </div>
 
                                 <div className="input-field">
                                     <i className="material-icons prefix blue-text text-accent-3">vpn_key</i>
                                     <input id="passwordSi" name="password" onChange={this.obtenerCambio.bind(this)} type="password" className="validate" value={this.state.password}></input>
                                     <label htmlFor="passwordSi">Password</label>
                                 </div>
+
                                 <br></br>
 
                                 <input type="submit" value="Register" className="btn btn-block btn-large blue accent-3"></input>

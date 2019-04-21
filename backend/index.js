@@ -25,7 +25,7 @@ app.use(express.json());
 
 //rutas
 app.use('/api',require('./routes/indexRoute'));
-app.use('/api/sedes', require('./routes/sedes'));
+
 
 
 //archivos estaticos

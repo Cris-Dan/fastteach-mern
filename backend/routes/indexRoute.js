@@ -16,11 +16,21 @@ router.get('/checkToken', withAuth, (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-    const { username, password } = req.body;
-    const user = new User({ username, password });
-    user.password = await user.encryptPassword(password);
-    await user.save();
-    res.send('agregado');
+    const { username, password, firstname, lastname, email } = req.body;
+    const user = new User({ username, password, firstname, lastname, email });
+    const user1 = await User.findOne({ username });
+    if (user1) {
+        res.send('username duplicate');
+    } else {
+        const user2 = await User.findOne({ email });
+        if (user2) {
+            res.send('email duplicate');
+        } else {
+            user.password = await user.encryptPassword(password);
+            await user.save();
+            res.send('agregado');
+        }
+    }
 });
 
 router.post('/authenticate', async (req, res) => {

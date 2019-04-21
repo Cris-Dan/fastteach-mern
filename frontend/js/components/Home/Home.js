@@ -5,13 +5,13 @@ class Home extends Component {
         super();
         
         this.state = {
-            message: 'Loading...'
+            mensaje: 'Loading...'
         }
     }
     componentDidMount() {
         fetch('/api/home')
             .then(res => res.text())
-            .then(res => this.setState({ message: res }));
+            .then(res => this.setState({ mensaje: res }));
     }
     render() {
         return (
@@ -28,7 +28,7 @@ class Home extends Component {
                         <div className="row  section2">
                             <div className="col s12 ">
                                 <h2>Lo que iba aca</h2>
-                                <p>{this.state.message} </p>
+                                <p>{this.state.mensaje} </p>
                             </div>
                         </div>
                     </div>
