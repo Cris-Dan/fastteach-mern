@@ -3,10 +3,14 @@ const express = require('express');
 const morgan = require('morgan');
 const multer = require('multer');
 const path = require('path');
-const app = express();
 const cookieParser = require('cookie-parser');
-require('./database');
+const passport = require('passport');
+const expressSession = require('express-session');
 
+const app = express();
+
+require('./database');
+require('./passport/local-auth');
 //configs
 app.set('port', process.env.PORT || 3000);
 
@@ -21,18 +25,24 @@ const storage = multer.diskStorage({
 });
 app.use(multer({ storage }).single('image'));
 app.use(express.urlencoded({ extended: false }));
+app.use(expressSession({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.json());
 
 //rutas
-app.use('/api',require('./routes/indexRoute'));
-
-
+app.use('/api', require('./routes/indexRoute'));
+app.use('/api',require('./routes/alumno'));
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname,'public/index.html'));
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 //iniciar

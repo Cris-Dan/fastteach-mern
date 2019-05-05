@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { browserHistory } from 'react-router';
 class Signup extends Component {
 
     constructor(context) {
@@ -19,14 +19,15 @@ class Signup extends Component {
 
     onSubmit(e) {
 
-        fetch('/api/authenticate', {
+        fetch('/api/login-alumno', {
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: { 'Content-Type': 'application/json' }
         }).then(res => {
             if (res.status === 200) {
+                //browserHistory.push('/dashboard');
                 alert('conseguido');
-            } 
+            }
         }).catch(err => {
             console.log(err);
             alert('error login');

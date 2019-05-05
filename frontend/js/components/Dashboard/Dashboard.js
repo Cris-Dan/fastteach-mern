@@ -10,7 +10,7 @@ class Dashboard extends Component {
         }
     }
     componentDidMount() {
-        fetch('/api/secret')
+        fetch('/api/secret-alumno')
             .then(res => res.text())
             .then(res => this.setState({ message: res }));
     }

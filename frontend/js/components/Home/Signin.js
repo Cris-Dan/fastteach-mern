@@ -16,7 +16,7 @@ class Signin extends Component {
 
     onSubmit(e) {
         console.log(this.state);
-        fetch('/api/register', {
+        fetch('/api/register-alumno', {
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: { 'Content-Type': 'application/json' }
