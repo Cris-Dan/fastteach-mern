@@ -8,6 +8,7 @@ const AlumnoSchema = new Schema({
   firstname: { type: String },
   lastname: { type: String },
   email: { type: String },
+  isVerified: {type: Boolean,default: false},
   ingresado: { type: Date, default: Date.now() }
 
 });

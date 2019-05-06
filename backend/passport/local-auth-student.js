@@ -1,8 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const Alumno = require('../models/Alumno');
-const pemailer  = require('emailer/enviar')
-
+const emailer  = require('emailer/enviar')
 
 
 passport.serializeUser((alumno, done) => {
@@ -42,6 +41,8 @@ passport.use('local-register-alumno', new LocalStrategy({
     await alumno.save();
 
 
+    /*Enviar correo electrónico a la cuenta del alumno*/
+    emailer.enviar(alumno);
 
 
     return done(null, alumno);
@@ -60,6 +61,9 @@ passport.use('local-login-alumno', new LocalStrategy({
     if (!alumno.comparePassword(password, alumno.password)) {
         return done(null, false);
     }
+    if (!alumno.isVerified)
+        return done(null,false);
+
     return done(null,alumno);
 
 }));
