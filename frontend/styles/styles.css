@@ -7,9 +7,13 @@
     width: 60px;
     height: 60px;
   }
-  
+
   a {
     color: #777 !important;
+  }
+
+  div{
+    display: block;
   }
   
   .section1 {
@@ -21,13 +25,25 @@
     width: 100%;
   }
   
-  h1, h4 {
+  h1, .title-banner{
     text-shadow: 1px 2px rgb(0, 0, 0);
     color: white;
   }
   
-  html {
-    background-color: white;
+  html, body {
+    font: 10pt 'Open Sans',arial,sans-serif;
+    margin: 0;
+    width: 100%;
+    min-width: 600px;
+    height: 100%;
+    -webkit-text-size-adjust: none;
+    font-weight: 400;
+    color: #222;
+    background: #f3f3f3;
+}
+
+  .mg60 {
+    margin-top: 60px !important;
   }
   
   .navPropio {
@@ -39,15 +55,60 @@
   }
   
   p {
-    color: #777;
-  }
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
   
   .section2 {
     height: 500px;
     color: #777;
-    ;
+    
   }
 
   .btn-block{
     width: 100%;
   }
+
+  .cgris{
+    color: #808080;
+  }
+  
+  .home_3block .opis .op {
+    display: inline-block;
+    width: 285px;
+    margin-left: 40px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.home_3block .opis.steps .op i {
+  width: 125px;
+  height: 110px;
+  display: block;
+  margin: 0 auto;
+  background-position: 0 -390px;
+}
+
+.home_3block .opis.steps .op i.b {
+  background-position: -311px -390px;
+}
+
+.home_3block .opis.steps .op i.c {
+  background-position: -638px -390px;
+  width: 100px;
+}
+
+.sprite-h2 {
+  background-image: url(/i/sprite_home3.png) !important;
+}
+
+.fs16 {
+  font-size: 16px;
+}
+
+.bold {
+  font-weight: bold;
+}
