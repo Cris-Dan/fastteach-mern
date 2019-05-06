@@ -5,30 +5,23 @@ const passport = require('passport');
 router.get('/secret-alumno', (req, res) => {
     if (req.isAuthenticated()) {
         res.send('autenticado uwu');
-    } else { 
+    } else {
         res.send('no autenticado owo');
     }
 });
 
-router.post('/register-alumno', passport.authenticate('local-register-alumno'), (req, res) => {
-    res.send('alumno registrado owo');
+router.post('/register-alumno', passport.authenticate('local-register-profesor'), (req, res) => {
+    //res.send('alumno registrado owo');
     res.redirect('/');
 });
 
-router.post('/login-alumno', passport.authenticate('local-login-alumno'), (req, res) => {
-    res.send('alumno lageado owo');
+router.post('/login-alumno', passport.authenticate('local-login-profesor'), (req, res) => {
+    //res.send('alumno lageado owo');
     res.redirect('/dashboard');
 });
 router.get('/logout-alumno', (req, res) => {
     req.logOut();
     res.redirect('/');
-});
-router.post('/confirmation/:token',(req,res,next)=>
-{
-    const token_confirmation = req.token;
-
-
-
 });
 //middleware que aun no uso equisde
 function estaAutenticado(req, res, next) {
