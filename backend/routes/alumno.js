@@ -15,7 +15,7 @@ router.get('/secret-alumno', (req, res) => {
 
 router.post('/register-alumno', passport.authenticate('local-register-alumno'), (req, res) => {
     //res.send('alumno registrado owo');
-    res.redirect('/');
+    res.json({message:'Correo Enviado'});
 });
 
 router.post('/login-alumno', passport.authenticate('local-login-alumno'), (req, res) => {
@@ -30,13 +30,13 @@ router.get('/logout-alumno', (req, res) => {
 });
 router.post('/confirmation/:token',async (req,res)=>
 {
-
-    const userdecode = jwt.verify(req.token,process.env.JWTSECRET);
-
-    if(userdecode==null)
+    console.log(req.params.token);
+    const userdecode = jwt.verify(req.params.token,process.env.JWTSECRET);
+    console.log(userdecode.data.email);
+    if(!userdecode)
         res.json({message:'No tiene autorizacion'});
     else {
-        const alumno = await Alumno.findOne({email:userdecode.email});
+        const alumno = await Alumno.findOne({email:userdecode.data.email});
         if(!alumno)
             res.json({message:'Cuenta no encontrada'});
         else
@@ -45,6 +45,7 @@ router.post('/confirmation/:token',async (req,res)=>
             await alumno.save();
             res.json({message:'Alumno autenticado'});
         }
+
     }
 
 });

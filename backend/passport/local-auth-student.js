@@ -1,7 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const Alumno = require('../models/Alumno');
-const emailer  = require('emailer/enviar')
+const emailer  = require('./emailer/enviar')
 
 
 passport.serializeUser((alumno, done) => {
@@ -42,7 +42,7 @@ passport.use('local-register-alumno', new LocalStrategy({
 
 
     /*Enviar correo electrónico a la cuenta del alumno*/
-    emailer.enviar(alumno);
+    emailer.enviar(alumno,req);
 
 
     return done(null, alumno);

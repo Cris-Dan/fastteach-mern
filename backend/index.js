@@ -6,7 +6,6 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const expressSession = require('express-session');
-const jwt = require('jsonwebtoken');
 
 
 
@@ -29,8 +28,7 @@ const storage = multer.diskStorage({
     }
 });
 app.use(multer({ storage }).single('image'));
-app.use(express.urlencoded({ extended: false }))
-app.use(jwt);
+app.use(express.urlencoded({ extended: false }));
 app.use(expressSession({
     secret: process.env.SECRET,
     resave: false,
