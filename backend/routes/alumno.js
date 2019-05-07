@@ -28,22 +28,22 @@ router.get('/logout-alumno', (req, res) => {
     req.logOut();
     res.redirect('/');
 });
-router.get('/confirmation/:token',async (req,res)=>
+router.post('/confirmation/:token',async (req,res)=>
 {
     //console.log(req.params.token);
     const userdecode = jwt.verify(req.params.token,process.env.JWTSECRET);
     //console.log(userdecode.data.email);
     if(!userdecode)
-        res.status(401);
+        res.json({estado:"Rechazado"});
     else {
         const alumno = await Alumno.findOne({email:userdecode.data.email});
         if(!alumno)
-            res.status(401);
+            res.json({estado:"Rechazado"});
         else
         {
             alumno.isVerified=true;
             await alumno.save();
-            res.status(200);
+            res.json({estado:"Aceptado"});
         }
 
     }
