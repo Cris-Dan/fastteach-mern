@@ -28,22 +28,22 @@ router.get('/logout-alumno', (req, res) => {
     req.logOut();
     res.redirect('/');
 });
-router.post('/confirmation/:token',async (req,res)=>
+router.get('/confirmation/:token',async (req,res)=>
 {
-    console.log(req.params.token);
+    //console.log(req.params.token);
     const userdecode = jwt.verify(req.params.token,process.env.JWTSECRET);
-    console.log(userdecode.data.email);
+    //console.log(userdecode.data.email);
     if(!userdecode)
-        res.json({message:'No tiene autorizacion'});
+        res.status(401);
     else {
         const alumno = await Alumno.findOne({email:userdecode.data.email});
         if(!alumno)
-            res.json({message:'Cuenta no encontrada'});
+            res.status(401);
         else
         {
             alumno.isVerified=true;
             await alumno.save();
-            res.json({message:'Alumno autenticado'});
+            res.status(200);
         }
 
     }
