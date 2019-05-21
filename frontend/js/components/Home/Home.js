@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
+import Footer from './Footer';
 class Home extends Component {
     constructor() {
         super();
@@ -79,6 +80,7 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         );
     }
