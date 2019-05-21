@@ -1,267 +1,59 @@
-#visor_imagenes{
-  text-align: center;
-  color: #455354;
-  display: inline;
+/*body,{
+/*
+  background: #B993D6;  /* fallback for old browsers */
+
+/* background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
+
+/*  background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+/*  background: white;
+}*/
+
+.cardPropio {
+  margin-top: 200px;
+  margin-bottom: 200px;
+  margin-left: 100px;
+  border-style: none;
+  border-color: transparent
 }
 
-.btnPropio {
-float: right;
-margin-right: 20px;
+.formGroupPropio {
+  margin-top: 30px
 }
 
-#logo {
-width: 60px;
-height: 60px;
+.rowPropio {
+  padding-top: 50px
 }
 
-a {
-color: #777 !important;
+.card2Propio {
+  margin-top: 200px;
+  margin-bottom: 200px;
+  margin-left: 100px
 }
 
-div{
-display: block;
+.backgroundPropio {
+  background: #0056ff
 }
 
-.section1 {
-background-color: rgba(0,0,0,0.8);
-height: 355px;
-background-image: url("https://c8.alamy.com/compes/p93y67/parado-y-herramientas-para-estudios-sobre-blanco-de-fondo-de-escritorio-vista-plana-p93y67.jpg");
-background-size: cover;
-
-width: 100%;
+.navbar {
+  height: 50px;
 }
 
-h1, .title-banner{
-text-shadow: 1px 2px rgb(0, 0, 0);
-color: white;
+#footer {
+  height: 258px;
 }
 
-html, body {
-font: 10pt 'Open Sans',arial,sans-serif;
-margin: 0;
-width: 100%;
-min-width: 600px;
-height: 100%;
--webkit-text-size-adjust: none;
-font-weight: 400;
-color: #222;
-
+#login {
+  margin-right: 260px;
 }
 
-.mg60 {
-margin-top: 60px !important;
+#bodyInfo {
+  height: 500px;
+  margin-left: 70px;
 }
 
-.navPropio {
-background: none;
+#features {
+  padding-top: 80px;
+  background: #d2fdff;
+  padding-bottom: 80px;
 }
-
-.tesks1 {
-margin-top: 10%;
-}
-
-p {
-display: block;
-margin-block-start: 1em;
-margin-block-end: 1em;
-margin-inline-start: 0px;
-margin-inline-end: 0px;
-}
-
-.section2 {
-height: 500px;
-color: #777;
-
-}
-
-.btn-block{
-width: 100%;
-}
-
-.cgris{
-color: #808080;
-}
-
-.home_3block .opis .op {
-display: inline-block;
-width: 285px;
-margin-left: 40px;
-text-align: center;
-vertical-align: top;
-}
-
-.home_3block .opis.steps .op i {
-width: 125px;
-height: 110px;
-display: block;
-margin: 0 auto;
-background-position: 0 -390px;
-}
-
-.home_3block .opis.steps .op i.b {
-background-position: -311px -390px;
-}
-
-.home_3block .opis.steps .op i.c {
-background-position: -638px -390px;
-width: 100px;
-}
-
-.sprite-h2 {
-background-image: url(/i/sprite_home3.png) !important;
-}
-
-.fs16 {
-font-size: 16px;
-}
-
-.bold {
-font-weight: bold;
-}
-
-
-
-
-
-/* INICIO FOOTER */
-#pie.pie2 {
-height: auto;
-padding: 20px 0 0;
-}
-
-#pie {
-color: #fff;
-padding: 20px 0;
-background: #2764a5;
-position: absolute;
-width: 100%;
-}
-
-.shell {
-width: 990px;
-margin: 0 auto;
-}
-
-#contfot {
-margin: 0 auto;
-background: #2764a5;
-}
-
-.pie2 .fi {
-min-width: 600px;
-max-width: 740px;
-}
-
-.fl_l, #tabs li, .fleft, .fl_l_a {
-width: auto;
-float: left;
-background: #A3A3AF;
-}
-
-.footer2 #contfot ul {
-margin: 20px 0;
-}
-
-#contfot ul {
-padding: 0;
-margin: 25px 0;
-float: left;
-list-style: none;
-border-left: 1px solid #356087;
-padding: 0 33px;
-}
-
-ul, menu, dir {
-display: block;
-list-style-type: disc;
-margin-block-start: 1em;
-margin-block-end: 1em;
-margin-inline-start: 0px;
-margin-inline-end: 0px;
-padding-inline-start: 40px;
-}
-
-.footer2 #contfot .fl_l ul {
-width: 180px;
-border: none;
-}
-
-.footer2 #contfot .fl_l>ul {
-min-height: 117px;
-}
-
-.footer2 #contfot ul {
-margin: 20px 0;
-}
-
-.footer2 #contfot li:first-child {
-border-bottom: 1px solid rgba(255,255,255,.2);
-margin-bottom: 10px;
-padding-bottom: 5px;
-}
-
-#contfot ul li {
-line-height: 24px;
-}
-
-li {
-display: list-item;
-text-align: -webkit-match-parent;
-}
-
-#contfot ul li a {
-color: #fff;
-text-decoration: none;
-font-size: 9pt;
-padding-bottom: 2px;
-}
-
-a.fff, a.fff:hover, .navigation li.active a, .simplemodal-data, .tblhorarios .si a, .footer2 #contfot li b, .simplemodal-data {
-color: #fff;
-}
-
-#contfot ul li b {
-color: #ddd;
-font-size: 11pt;
-}
-
-a:-webkit-any-link {
-color: -webkit-link;
-cursor: pointer;
-}
-
-html .fl_r, .fright, .fl_r_a {
-float: right;
-}
-
-#socialfoot .el a.face {
-background-position: -238px -131px;
-}
-#socialfoot .el a {
-display: inline-block;
-width: 23px;
-height: 24px;
-margin: 18px 21px 0 5px;
-}
-.s1, .sprite, #socialfoot a, #footer, #promopta a, .sprite-grid, .tick_cross, .spr_parrilla, .spr-com, select, input.input-lupa {
-background-image: url(/i/t_s30.png);
-}
-#pie a {
-color: #f6f6f6;
-text-decoration: none;
-}
-
-a, a:active, a:visited, a:hover {
-font-size: 10pt;
-color: #4382ca;
-text-decoration: none;
-}
-.opa9, .bcontactar:hover {
-opacity: .9;
-filter: alpha(opacity=90);
-}
-.face {
-background-position: -70px -603px;
-}
-
-

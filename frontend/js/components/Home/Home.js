@@ -4,9 +4,12 @@ import Footer from './Footer';
 class Home extends Component {
     constructor() {
         super();
-        
+
         this.state = {
-            mensaje: 'Loading...'
+            username: '',
+            password: '',
+            email: '',
+           
         }
     }
     componentDidMount() {
@@ -14,69 +17,104 @@ class Home extends Component {
             .then(res => res.text())
             .then(res => this.setState({ mensaje: res }));
     }
+
+    obtenerCambioRegistro(e) {
+        const { name, value } = e.target;
+        this.setState({
+            [name]: value
+        });
+
+    }
+
+    onSubmit(e) {
+        console.log(this.state);
+        fetch('/api/register-alumno', {
+            method: 'POST',
+            body: JSON.stringify(this.state),
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(res => res.text())
+            .then(res => alert(res))
+            .catch(err => {
+                console.log(err);
+                alert('error register');
+            })
+        e.preventDefault();
+    }
+
     render() {
         return (
             <div>
                 <Nav />
-                <div >
-                    <div className="section">
-                        <div className="row section1 center">
-                            <h1>FazTeach</h1>
-                            <h4 className="title-banner">Encuentra el profesor particular mas cerca de ti</h4>
+                <div className="container-fluid">
+                    <div className="row backgroundPropio" >
+                        <div className="col-sm-6">
+                            <div className="card cardPropio"
+                            >
+                                <div className="card-body backgroundPropio" >
+                                    <h1 className=" display-3 font-weight-bold text-white text-center">Bienvenidos a TechFazt</h1>
+                                    <h3 className=" text-white text-center">La plataforma que te ayudará a conocer</h3>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="section">
-                        <div className="row  section2">
-                            <div className="col s12 ">
-                                <h4 className = "center-align">Encuentra y contacta gratis con profesores particulares</h4>
-                                <h6 className = "center-align">Descubre como utilizar FazTeach para encontrar tu profesor particular ideal </h6>
-                                <div className = "home_3block mg60">
-                                    <div className = "opis steps cgris center-align" >
-                                        <div className = "op">
-                                            <i className = "sprite-h2"></i>
-                                            <p className ="fs16 bold">Explora</p>
-                                            <p>Somos el mayor portal de profesores del Perú</p>
+                        <div className="col-sm-6">
+                            <div className="card w-50 card2Propio" >
+
+                                <div className="card-body">
+                                    <h2 className="text-center font-weight-bold">Aprende con nosotros</h2>
+                                    <h5 className="text-center">Regístrate en pocos segundos</h5>
+                                    <form onSubmit={this.onSubmit.bind(this)}>
+                                        <div className="form-group formGroupPropio" >
+
+                                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                placeholder="Enter email" name="email" onChange={this.obtenerCambioRegistro.bind(this)}></input>
                                         </div>
-                                        <div className = "op">
-                                            <i className = "sprite-h2 b"></i>
-                                            <p className ="fs16 bold">Escoge</p>
-                                            <p>Selecciona tu profesor perfecto según tus necesidades, su experiencia, precio...</p>
+                                        <div className="form-group formGroupPropio" >
+
+                                            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" name="password" onChange={this.obtenerCambioRegistro.bind(this)}></input>
                                         </div>
-                                        <div className ="op">
-                                            <i className = "sprite-h2 c"></i>
-                                            <p className ="fs16 bold">Aprende</p>
-                                            <p>Con clases particulares aprendes más rápido, ya que son totalmente personalizadas</p>
-                                        </div>  
-                                    </div>
+                                        <div className="form-group formGroupPropio" >
+
+                                            <input type="text" className="form-control" name="username" id="usernameField"
+                                                placeholder="Username" onChange={this.obtenerCambioRegistro.bind(this)}></input>
+                                        </div>
+                                        <button type="submit" className="btn btn-outline-dark w-100"> <span
+                                            className="font-weight-bold">Regístrate</span></button>
+                                        <a className="btn  btn-outline-primary w-100 mt-3 " href="/#"><i className="fab fa-facebook"></i>
+                                            <span className="font-weight-bold">Ingresa con Facebook</span></a>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="section">
-                        <div className="row  section2">
-                            <div className="col s12 ">
-                                <h4 className = "center-align">Clases particulares y profesores de apoyo por temática</h4>
-                                <h6 className = "center-align">Contamos con profesores de cientos de asignaturas, idiomas, disciplinas, especialidades técnicas, artísticas... y por supuesto a tu nivel</h6>
-                                <div className = "home_3block mg60">
-                                    <div className = "opis steps cgris center-align" >
-                                        <div className = "op">
-                                            <i className = "sprite-h2"></i>
-                                            <p className ="fs16 bold">Explora</p>
-                                            <p>Somos el mayor portal de profesores del Perú</p>
-                                        </div>
-                                        <div className = "op">
-                                            <i className = "sprite-h2 b"></i>
-                                            <p className ="fs16 bold">Explora</p>
-                                            <p>Somos el mayor portal de profesores del Perú</p>
-                                        </div>
-                                        <div className ="op">
-                                            <i className = "sprite-h2 c"></i>
-                                            <p className ="fs16 bold">Explora</p>
-                                            <p>Somos el mayor portal de profesores del Perú</p>
-                                        </div>  
-                                    </div>
-                                </div>
-                            </div>
+                </div>
+                <div id="features" className="container-fluid">
+                    <h2 className="text text-center font-weight-bold">Todo lo que necesitas para aprender</h2>
+                    <div className="row mt-5">
+                        <div className="col-sm-3">
+
+                        </div>
+                        <div className="col-sm-2 ">
+                            <img className="d-flex justify-content-center" src="images/clock.png" width="75" height="75" alt=""></img>
+                            <h5 className="font-weight-bold text text-dark d-flex justify-content-start mt-4">A la vuelta de la esquina</h5>
+                            <h6 className="d-flex justify-content-start text text-black-50">Contacta a los mejores tutores que están
+    dispuestos a enseñarte y cercanos a tu hogar.</h6>
+
+                        </div>
+                        <div className="col-sm-2  ">
+                            <img className="d-flex justify-content-center" src="images/classroom.png" width="75" height="75" alt=""></img>
+                            <h5 className="font-weight-bold text text-dark d-flex justify-content-start mt-4">Enseñanza de calidad</h5>
+                            <h6 className="text text-black-50">Tutores con amplia experiencia y especializados en los cursos que dictan.</h6>
+
+                        </div>
+                        <div className="col-sm-2  ">
+                            <img className="d-flex justify-content-center" src="images/exam.png" width="75" height="75" alt=""></img>
+                            <h5 className="font-weight-bold text text-dark d-flex justify-content-start mt-4">Repositorio de Archivos</h5>
+                            <h6 className="text text-black-50">Disfruta de nuestro banco de preguntas acorde a las necesidades que
+    tengas.</h6>
+                        </div>
+                        <div className="col-sm-3">
+
                         </div>
                     </div>
                 </div>
