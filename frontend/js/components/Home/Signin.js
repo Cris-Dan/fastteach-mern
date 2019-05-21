@@ -49,13 +49,13 @@ class Signin extends Component {
                                 <div className="input-field">
                                     <i className="material-icons prefix blue-text text-accent-3">account_circle</i>
                                     <input id="usernameSi" name="username" onChange={this.obtenerCambio.bind(this)} type="text" className="validate" value={this.state.username}></input>
-                                    <label htmlFor="usernameSi">Nombre de usario</label>
+                                    <label htmlFor="usernameSi">Nombre de usuario</label>
                                 </div>
 
                                 <div className="input-field">
                                     <i className="material-icons prefix blue-text text-accent-3">email</i>
                                     <input id="email" name="email" onChange={this.obtenerCambio.bind(this)} type="email" className="validate" value={this.state.email}></input>
-                                    <label htmlFor="email">Correo</label>
+                                    <label htmlFor="email">Correo electrónico</label>
                                 </div>
 
                                 <div className="input-field">
@@ -73,12 +73,12 @@ class Signin extends Component {
                                 <div className="input-field">
                                     <i className="material-icons prefix blue-text text-accent-3">vpn_key</i>
                                     <input id="passwordSi" name="password" onChange={this.obtenerCambio.bind(this)} type="password" className="validate" value={this.state.password}></input>
-                                    <label htmlFor="passwordSi">Password</label>
+                                    <label htmlFor="passwordSi">Contraseña</label>
                                 </div>
 
                                 <br></br>
 
-                                <input type="submit" value="Register" className="btn btn-block btn-large blue accent-3"></input>
+                                <input type="submit" value="Registrar" className="btn btn-block btn-large blue accent-3"></input>
                             </div>
                         </div>
                     </form>

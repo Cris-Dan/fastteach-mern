@@ -43,16 +43,16 @@ class Signup extends Component {
                         <div className="input-field">
                             <i className="material-icons prefix  blue-text text-accent-3">account_circle</i>
                             <input type="text" id="username" name="username" value={this.state.username} onChange={this.obtenerCambio.bind(this)}></input>
-                            <label htmlFor="username">Username</label>
+                            <label htmlFor="username">Nombre de usuario</label>
                         </div>
                         <br></br>
                         <div className="input-field">
                             <i className="material-icons prefix  blue-text text-accent-3">lock</i>
-                            <input type="text" id="password" name="password" value={this.state.password} onChange={this.obtenerCambio.bind(this)}></input>
-                            <label htmlFor="password">Password</label>
+                            <input type="password" id="password" name="password" value={this.state.password} onChange={this.obtenerCambio.bind(this)}></input>
+                            <label htmlFor="password">Contraseña</label>
                         </div>
                         <br></br>
-                        <input type="submit" value="Login" className="btn btn-large blue accent-3"></input>
+                        <input type="submit" value="Ingresar" className="btn btn-large blue accent-3"></input>
                     </form>
                 </div>
             </div>
