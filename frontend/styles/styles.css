@@ -57,3 +57,31 @@
   background: #d2fdff;
   padding-bottom: 80px;
 }
+
+/*FOOTER*/
+
+.footerFormat {
+  //background-color: rgb(91,131,205);
+}
+.footerFormat ul div{
+  //border-bottom: 1px solid black;
+}
+
+.footerFormat a{
+  text-decoration: none;
+}
+
+.footerFormat ul{
+  list-style: none;
+}
+
+.footerFormat ul li {
+  margin-top: 0.5em;
+}
+/*iconos dentro de footer*/
+.footerFormat i {
+  font-size: 2em;
+  margin-right: 0.25em;
+}
+
+/*END FOOTER*/
