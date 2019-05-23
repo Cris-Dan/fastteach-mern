@@ -53,7 +53,15 @@
 }
 
 /*NAV*/
-
+.bg-primary-color{
+  background-color: #1048E1;
+}
+.bg-secondary-color{
+  background-color: #4710E2;
+}
+.bg-third-color{
+  background-color: #016E79;
+}
 
 /*END NAV*/
 

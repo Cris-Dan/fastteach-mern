@@ -5,12 +5,10 @@ import Footer from './Footer';
 class Home extends Component {
     constructor() {
         super();
-
         this.state = {
             username: '',
             password: '',
             email: '',
-
         }
     }
 
@@ -48,13 +46,13 @@ class Home extends Component {
         return (
             <div>
                 <Nav/>
-                <div className="container-fluid mt-5 backgroundPropio">
+                <div className="container-fluid mt-5 bg-primary-color">
                     <div className="container">
                         <div className="row  h-100 align-items-center py-5">
                             <div className="col-sm-6">
                                 <div className="card cardPropio ">
                                     <div className="card-body backgroundPropio">
-                                        <h1 className="card-title font-weight-bold text-white text-center">Bienvenidos a
+                                        <h1 className="display-5 font-weight-bold text-white text-center">Bienvenidos a
                                             TechFazt</h1>
                                         <h3 className=" text-white text-center">La plataforma que te ayudará a
                                             conocer</h3>
@@ -101,41 +99,41 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                <div id="features" className="container-fluid">
-                    <h2 className="text text-center font-weight-bold">Todo lo que necesitas para aprender</h2>
-                    <div className="row mt-5">
-                        <div className="col-sm-3">
+                <div id="" className="container-fluid  py-5">
+                    <div className="container">
+                        <h2 className="text text-center font-weight-bold">Todo lo que necesitas para aprender</h2>
+                        <div className="row mt-5  text-center">
+                            <div className="col-sm-4  mt-5">
+                                <img className="d-flex mx-auto" src="images/clock.png" width="75"
+                                     height="75"
+                                     alt="" ></img>
+                                <h5 className="font-weight-bold text text-dark   mt-4">A la
+                                    vuelta de la esquina</h5>
+                                <h6 className="d-flex justify-content-start text text-black-50">Contacta a los mejores
+                                    tutores que están
+                                    dispuestos a enseñarte y cercanos a tu hogar.</h6>
 
-                        </div>
-                        <div className="col-sm-2 ">
-                            <img className="d-flex justify-content-center" src="images/clock.png" width="75" height="75"
-                                 alt=""></img>
-                            <h5 className="font-weight-bold text text-dark d-flex justify-content-start mt-4">A la
-                                vuelta de la esquina</h5>
-                            <h6 className="d-flex justify-content-start text text-black-50">Contacta a los mejores
-                                tutores que están
-                                dispuestos a enseñarte y cercanos a tu hogar.</h6>
+                            </div>
+                            <div className="col-sm-4 mt-5 ">
+                                <img className="d-flex  mx-auto" src="images/classroom.png" width="75"
+                                     height="75" alt=""></img>
+                                <h5 className="font-weight-bold text text-dark   mt-4">Enseñanza
+                                    de calidad</h5>
+                                <h6 className="text text-black-50">Tutores con amplia experiencia y especializados en
+                                    los
+                                    cursos que dictan.</h6>
 
-                        </div>
-                        <div className="col-sm-2  ">
-                            <img className="d-flex justify-content-center" src="images/classroom.png" width="75"
-                                 height="75" alt=""></img>
-                            <h5 className="font-weight-bold text text-dark d-flex justify-content-start mt-4">Enseñanza
-                                de calidad</h5>
-                            <h6 className="text text-black-50">Tutores con amplia experiencia y especializados en los
-                                cursos que dictan.</h6>
-
-                        </div>
-                        <div className="col-sm-2  ">
-                            <img className="d-flex justify-content-center" src="images/exam.png" width="75" height="75"
-                                 alt=""></img>
-                            <h5 className="font-weight-bold text text-dark d-flex justify-content-start mt-4">Repositorio
-                                de Archivos</h5>
-                            <h6 className="text text-black-50">Disfruta de nuestro banco de preguntas acorde a las
-                                necesidades que
-                                tengas.</h6>
-                        </div>
-                        <div className="col-sm-3">
+                            </div>
+                            <div className="col-sm-4  mt-5">
+                                <img className="d-flex  mx-auto" src="images/exam.png" width="75"
+                                     height="75"
+                                     alt=""></img>
+                                <h5 className="font-weight-bold text text-dark  mt-4">Repositorio
+                                    de Archivos</h5>
+                                <h6 className="text text-black-50">Disfruta de nuestro banco de preguntas acorde a las
+                                    necesidades que
+                                    tengas.</h6>
+                            </div>
 
                         </div>
                     </div>
